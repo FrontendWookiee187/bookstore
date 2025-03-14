@@ -1,7 +1,7 @@
 function init(){
 
-    renderBooksGallery()
-    
+    renderBooksGallery() 
+    renderBookTitle()  
     
     
 }
@@ -14,22 +14,55 @@ function renderBooksGallery (i){
 
         document.getElementById('book_container').innerHTML += booksGallery(i)        
     }
-
-    renderBookTitle()
+    
 }
 
 function renderBookTitle(indexTitle){
 
     for (let indexTitle = 0; indexTitle < books.length; indexTitle++) {
-        // let bookName = books[0].name[indexTitle];
+               
+        document.getElementById('bookTitle');    
+       }   
+    
+}
+
+function renderPrice(indexPrice){
+
+    for (let indexPrice = 0; indexPrice < books.length; indexPrice++) {
+               
+        document.getElementById('price');    
+       }   
+    
+}
+
+function renderPrice(indexLikes){
+
+    for (let indexLikes = 0; indexLikes < books.length; indexLikes++) {
+               
+        document.getElementById('likes');    
+       }   
+    
+}
+
+function renderInfoBox(indexInfo){
+
+    for (let indexInfo = 0; indexInfo < books.length; indexInfo++) {
         
-       let bookName = document.getElementById('bookTitle');
-       
-       
-
-        console.log(bookName);
+        document.getElementById('author');
+        document.getElementById('publishedYear');
+        document.getElementById('genre');              
+        
     }
+}
 
-    
-    
+
+
+function renderCommentBox(indexComments){
+
+    for (let indexComments = 0; indexComments < books.comments.length; indexComments++) {
+        
+        document.getElementById('comments');
+                      
+        
+    }
 }
