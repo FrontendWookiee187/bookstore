@@ -22,7 +22,7 @@ function renderBooksGallery (){
             
            
             document.getElementById(`comments${i}`).innerHTML +=
-            `<div id="commentNr${i}" class="commentNr">${books[i].comments[j].name}: ${books[i].comments[j].comment}</div>`
+            renderComments(i, j)
             
         }        
         
@@ -73,20 +73,60 @@ function renderInfoBox(indexInfo){
 }
 
 
+function addComment(){
 
-// function renderCommentBox(indexComments){
+    for (let i = 0; i < books.length; i++) {
 
-//     for (let indexComments = 0; indexComments < books.length; indexComments++) {       
-        
+        let addCommentValueRef = document.getElementById(`inputField${i}`)
+        let addCommentValue = addCommentValueRef.value;
 
-//       document.getElementById('comments');       
+        let addComment = {name: "Daniel", comment:addCommentValue }
+
+        if (addCommentValue === "") {
+            
+        }
+
+        else{
         
-               
+        books[i].comments.push(addComment)
         
-//     }
+        document.getElementById(`comments${i}`).innerHTML = "";
+             
+        
+ 
+
+  for (let j = 0; j <books[i].comments.length; j++) {
 
     
-// }
+    document.getElementById(`comments${i}`).innerHTML += renderComments(i, j)
+    addCommentValueRef.value="" 
+    
+    }
+    
+}
+}
+}
+
+function toggleLike(i){  
+let liked = document.getElementById(`likeBtn${i}`);
+liked.classList.toggle("d_liked")
+    
+   }
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
