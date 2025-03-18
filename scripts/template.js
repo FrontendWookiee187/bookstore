@@ -6,11 +6,16 @@ function booksGallery(i){
         <div id="book_picture" class="book_picture" > <img src="assets/img/book.png" alt=""></div>
         <div id="price_and_likes" class="price_and_likes">
         <div id="price" class="price">${books[i].price} €</div>
-        <div id="likes" class="likes">${books[i].likes}
+
+        <div id="likeContainer" class="likeContainer">
+
+        <div id="likes${i}" class="likes">${books[i].likes}</div>
             <div id="likeBtn${i}" class="d_unliked" onclick="toggleLike(${i})"></div>
         </div>
 
         </div>
+
+        
 
         <div id="info_container" class="info_container">
 
@@ -43,6 +48,7 @@ function booksGallery(i){
         `
     }
 
+  
 
     
 

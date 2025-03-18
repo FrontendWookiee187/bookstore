@@ -3,7 +3,7 @@ function init(){
     renderBooksGallery() 
     renderBookTitle()  
     renderPrice()
-    renderLikes()
+    // renderLikes()
     renderInfoBox()
     // renderCommentBox()
     
@@ -52,14 +52,14 @@ function renderPrice(indexPrice){
     
 }
 
-function renderLikes(indexLikes){
+// function renderLikes(indexLikes){
 
-    for (let indexLikes = 0; indexLikes < books.length; indexLikes++) {
+//     for (let indexLikes = 0; indexLikes < books.length; indexLikes++) {
                
-        document.getElementById('likes');    
-       }   
+//         document.getElementById('likes');    
+//        }   
     
-}
+// }
 
 function renderInfoBox(indexInfo){
 
@@ -110,8 +110,49 @@ function addComment(){
 function toggleLike(i){  
 let liked = document.getElementById(`likeBtn${i}`);
 liked.classList.toggle("d_liked")
-    
+
+likeCounter(i)
+
    }
+
+
+    function likeCounter(i){
+    let likesRef= document.getElementById(`likeBtn${i}`)
+    let likesValue = document.getElementById(`likes${i}`)  
+
+    if (likesRef.classList.contains("d_liked")===true){ 
+        document.getElementById(`likes${i}`).innerHTML=
+
+        /*html*/`
+            ${books[i].likes+1}           `   
+             
+    console.log(likesRef.classList.contains("d_liked"));
+    console.log(books[i].likes);    
+         
+      }
+      else if (likesRef.classList.contains("d_unliked")===true){
+        document.getElementById(`likes${i}`).innerHTML=
+
+        /*html*/`
+            ${books[i].likes}
+             ` 
+      }
+      
+     }
+
+
+
+   function testValueLike(i){
+    
+    
+
+    console.log(Object.values(books[0].likes));
+
+    
+
+   }
+    
+   
 
  
 

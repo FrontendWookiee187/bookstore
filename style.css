@@ -94,7 +94,9 @@ footer {
   border-color: black;
 }
 
-.likes {
+
+
+.likes, .likeContainer {
   display: flex;
   flex: 1;
   height: 100%;
