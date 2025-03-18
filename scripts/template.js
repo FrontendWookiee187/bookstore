@@ -3,7 +3,7 @@ function booksGallery(i){
     return /*html*/`
         <div id="book${i + 1}" class="book">
         <div id="bookTitle${i + 1}" class="bookTitle">${books[i].name}</div>
-        <div id="book_picture" class="book_picture" > <img src="assets/img/book.png" alt=""></div>
+        <div id="book_picture" class="book_picture" > <img src="assets/img/book_transparent.png" alt=""></div>
         <div id="price_and_likes" class="price_and_likes">
         <div id="price" class="price">${books[i].price} €</div>
 
@@ -13,9 +13,7 @@ function booksGallery(i){
             <div id="likeBtn${i}" class="d_unliked" onclick="toggleLike(${i})"></div>
         </div>
 
-        </div>
-
-        
+        </div>        
 
         <div id="info_container" class="info_container">
 
@@ -30,11 +28,7 @@ function booksGallery(i){
         <div id="inputSection${i}" class="inputSection">
             <input id="inputField${i}" class="inputField" type="text" placeholder="Kommentar hinzufügen">
             <button id="sendBtn${i}" onclick="addComment()">abschicken</button>
-        </div>
-        
-
-        
-
+        </div>      
 
         </div>      
         `

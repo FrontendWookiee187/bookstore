@@ -1,6 +1,8 @@
 html {
   scroll-behavior: smooth;
   color: white;
+
+  font-family: "Play";
 }
 
 body {
@@ -9,13 +11,29 @@ body {
 
 h1 {
   margin: 0;
+  padding-top: 6px;
 }
 
 header {
   width: 100%;
   height: 100px;
+  font-size: 24px;
 
   background-color: rgb(8, 33, 41);
+
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+
+  align-items: center;
+  gap: 8px;
+
+  padding-left: 3%;
+}
+
+header img {
+  width: 64px;
+  height: 64px;
 }
 
 footer {
@@ -29,12 +47,18 @@ footer {
   max-width: 1920px;
   min-height: calc(100vh - 200px);
 
-  background-color: rgb(5, 23, 30);
+  background-color: rgb(8 46 61);
+
+  display: flex;
+  flex-direction: column;
+  align-items: anchor-center;
 }
 
 .content_container {
   width: 100%;
   height: 100%;
+
+  padding-left: 3%;
 }
 
 .book_container {
@@ -43,31 +67,46 @@ footer {
 
   height: 100%;
   width: 100%;
+
+  gap: 6px;
+
+  margin-top: 24px;
+
+  justify-content: center;
 }
 
 .book {
   height: 650px;
   width: 320px;
 
-  background-color: white;
+  background-color: rgba(8, 45, 80, 0.76);
 
   border-style: solid;
   border-color: black;
 
   gap: 4px;
+
+  border-radius: 12px;
+
+  /* background-image: linear-gradient(white, rgb(8, 33, 41)); */
 }
 
 .bookTitle {
   width: 100%;
   height: 60px;
 
-  background-color: grey;
+  background-color: rgba(8, 45, 80, 0.76);
+  /* background-image: linear-gradient(white, rgb(8 46 61)); */
+  padding-left: 8px;
+  padding-top: 6px;
 }
 
 .book_picture {
   width: 100%;
   display: flex;
   justify-content: center;
+
+  background-image: linear-gradient(white, rgb(8 46 61));
 }
 
 .book_picture img {
@@ -79,7 +118,7 @@ footer {
   width: 100%;
   height: 70px;
 
-  background-color: grey;
+  background-color: rgba(8, 45, 80, 0.76);
 
   display: flex;
   flex-direction: row;
@@ -90,38 +129,45 @@ footer {
   flex: 1;
 
   height: 100%;
-  border-style: solid;
-  border-color: black;
+
+  align-items: center;
+
+  color: red;
+  font-weight: bold;
+
+  margin-left: 8px;
 }
 
-
-
-.likes, .likeContainer {
+.likeContainer {
   display: flex;
   flex: 1;
   height: 100%;
-  border-style: solid;
-  border-color: black;
 
   justify-content: space-between;
 }
 
-.likes img{
+.likes {
+  display: flex;
+  flex: 1;
+  height: 100%;
+
+  align-items: center;
+}
+
+.likes img {
   width: 30px;
   height: 30px;
 
   cursor: pointer;
-  
 }
 
 .info_container {
   width: 100%;
   height: 73px;
 
-  color: black;
+  color: white;
 
-  border-style: solid;
-  border-color: black;
+  padding-left: 6px;
 }
 
 .author,
@@ -129,15 +175,14 @@ footer {
 .genre {
   width: 100%;
   height: 20px;
-
-  border-style: solid;
-  border-color: black;
 }
 
 .comments {
   width: 100%;
   height: 225px;
-  background-color: grey;
+  /* background-color: white; */
+  background-image: linear-gradient(white, rgb(8 46 61));
+  color: black;
 
   display: flex;
   flex-direction: column;
@@ -145,40 +190,43 @@ footer {
 
   overflow: scroll;
   scrollbar-width: thin;
+
+  padding-left: 6px;
+}
+
+.inputSection {
+  padding-left: 6px;
 }
 
 .d_unliked {
+  background-image: url(assets/img/favorite_unliked.png);
 
-background-image: url(assets/img/favorite_unliked.png);
+  width: 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  flex: 1;
 
-width: 100%;
-background-repeat:no-repeat;
-display: flex;
-flex: 1; 
+  cursor: pointer;
 
-cursor: pointer;
-
-background-position: right;
-  
+  background-position: right;
 }
 
-
-
-
-
 .d_liked {
-
   background-image: url(assets/img/favorite_liked.png);
 
-width: 100%;
-background-repeat:no-repeat;
-display: flex;
-flex: 1; 
+  width: 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  flex: 1;
 
-cursor: pointer;
+  cursor: pointer;
 
-background-position: right;
+  background-position: right;
+}
 
-  
-  
+@media (max-width: 365px) {
+  .book {
+    height: 650px;
+    width: 280px;
+  }
 }

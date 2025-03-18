@@ -1,174 +1,60 @@
-function init(){
-
-    renderBooksGallery() 
-    renderBookTitle()  
-    renderPrice()
-    // renderLikes()
-    renderInfoBox()
-    // renderCommentBox()
-    
-    
+function init() {
+  renderBooksGallery();
 }
 
+function renderBooksGallery() {
+  for (let i = 0; i < books.length; i++) {
+    document.getElementById("book_container").innerHTML += booksGallery(i);
 
-function renderBooksGallery (){
-
-    for (let i = 0; i < books.length; i++) {
-        
-        document.getElementById('book_container').innerHTML += booksGallery(i)  
-                
-       
-        for (let j = 0; j <books[i].comments.length; j++) {    
-            
-           
-            document.getElementById(`comments${i}`).innerHTML +=
-            renderComments(i, j)
-            
-        }        
-        
+    for (let j = 0; j < books[i].comments.length; j++) {
+      document.getElementById(`comments${i}`).innerHTML += renderComments(i, j);
     }
-
-
-    
-
-    
+  }
 }
 
-function renderBookTitle(indexTitle){
+function addComment() {
+  for (let i = 0; i < books.length; i++) {
+    let addCommentValueRef = document.getElementById(`inputField${i}`);
+    let addCommentValue = addCommentValueRef.value;
 
-    for (let indexTitle = 0; indexTitle < books.length; indexTitle++) {
-               
-        document.getElementById('bookTitle');    
-       }   
-    
-}
+    let addComment = { name: "Daniel", comment: addCommentValue };
 
-function renderPrice(indexPrice){
+    if (addCommentValue === "") {
+    } else {
+      books[i].comments.push(addComment);
+      document.getElementById(`comments${i}`).innerHTML = "";
 
-    for (let indexPrice = 0; indexPrice < books.length; indexPrice++) {
-               
-        document.getElementById('price');    
-       }   
-    
-}
-
-// function renderLikes(indexLikes){
-
-//     for (let indexLikes = 0; indexLikes < books.length; indexLikes++) {
-               
-//         document.getElementById('likes');    
-//        }   
-    
-// }
-
-function renderInfoBox(indexInfo){
-
-    for (let indexInfo = 0; indexInfo < books.length; indexInfo++) {
-        
-        document.getElementById('author');
-        document.getElementById('publishedYear');
-        document.getElementById('genre');              
-        
+      for (let j = 0; j < books[i].comments.length; j++) {
+        document.getElementById(`comments${i}`).innerHTML += renderComments(
+          i,
+          j
+        );
+        addCommentValueRef.value = "";
+      }
     }
+  }
 }
 
+function toggleLike(i) {
+  let liked = document.getElementById(`likeBtn${i}`);
+  liked.classList.toggle("d_liked");
 
-function addComment(){
-
-    for (let i = 0; i < books.length; i++) {
-
-        let addCommentValueRef = document.getElementById(`inputField${i}`)
-        let addCommentValue = addCommentValueRef.value;
-
-        let addComment = {name: "Daniel", comment:addCommentValue }
-
-        if (addCommentValue === "") {
-            
-        }
-
-        else{
-        
-        books[i].comments.push(addComment)
-        
-        document.getElementById(`comments${i}`).innerHTML = "";
-             
-        
- 
-
-  for (let j = 0; j <books[i].comments.length; j++) {
-
-    
-    document.getElementById(`comments${i}`).innerHTML += renderComments(i, j)
-    addCommentValueRef.value="" 
-    
-    }
-    
-}
-}
+  likeCounter(i);
 }
 
-function toggleLike(i){  
-let liked = document.getElementById(`likeBtn${i}`);
-liked.classList.toggle("d_liked")
+function likeCounter(i) {
+  let likesRef = document.getElementById(`likeBtn${i}`);
+  let likesValue = document.getElementById(`likes${i}`);
 
-likeCounter(i)
+  if (likesRef.classList.contains("d_liked") === true) {
+    document.getElementById(`likes${i}`).innerHTML = /*html*/ `
+            ${books[i].likes + 1}           `;
 
-   }
-
-
-    function likeCounter(i){
-    let likesRef= document.getElementById(`likeBtn${i}`)
-    let likesValue = document.getElementById(`likes${i}`)  
-
-    if (likesRef.classList.contains("d_liked")===true){ 
-        document.getElementById(`likes${i}`).innerHTML=
-
-        /*html*/`
-            ${books[i].likes+1}           `   
-             
     console.log(likesRef.classList.contains("d_liked"));
-    console.log(books[i].likes);    
-         
-      }
-      else if (likesRef.classList.contains("d_unliked")===true){
-        document.getElementById(`likes${i}`).innerHTML=
-
-        /*html*/`
+    console.log(books[i].likes);
+  } else if (likesRef.classList.contains("d_unliked") === true) {
+    document.getElementById(`likes${i}`).innerHTML = /*html*/ `
             ${books[i].likes}
-             ` 
-      }
-      
-     }
-
-
-
-   function testValueLike(i){
-    
-    
-
-    console.log(Object.values(books[0].likes));
-
-    
-
-   }
-    
-   
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+             `;
+  }
+}
