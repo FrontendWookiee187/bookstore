@@ -5,7 +5,7 @@ function booksGallery(i){
             <div id="bookTitle${i + 1}" class="bookTitle">${books[i].name}</div>
             <div id="book_picture" class="book_picture" > <img src="assets/img/book_transparent.png" alt=""></div>
             <div id="price_and_likes" class="price_and_likes">
-            <div id="price" class="price">${books[i].price.toFixed(2)} €</div>
+            <div id="price" class="price">${books[i].price.toLocaleString("de-DE", {style: 'currency', currency: 'EUR'})}</div>
            <div id="likeContainer" class="likeContainer">
                 <div id="likes${i}" class="likes">${books[i].likes}</div>
                 <div id="likeBtn${i}" class="d_unliked" onclick="toggleLike(${i})"></div>
