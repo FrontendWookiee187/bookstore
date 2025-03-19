@@ -59,6 +59,7 @@ footer {
   height: 100%;
 
   padding-left: 3%;
+  padding-right: 3%;
 }
 
 .book_container {
@@ -76,7 +77,7 @@ footer {
 }
 
 .book {
-  height: 650px;
+  height: 660px;
   width: 320px;
 
   background-color: rgba(8, 45, 80, 0.76);
@@ -92,7 +93,7 @@ footer {
 }
 
 .bookTitle {
-  width: 100%;
+  width: fit-content;
   height: 60px;
 
   background-color: rgba(8, 45, 80, 0.76);
@@ -189,13 +190,19 @@ footer {
   gap: 8px;
 
   overflow: scroll;
-  scrollbar-width: thin;
+  scrollbar-width: none;
 
-  padding-left: 6px;
+  box-sizing: content-box;
+
+  margin-bottom: 6px;
+
+  
 }
 
 .inputSection {
   padding-left: 6px;
+  width: fit-content;
+  height: fit-content;
 }
 
 .d_unliked {
@@ -209,6 +216,9 @@ footer {
   cursor: pointer;
 
   background-position: right;
+
+  
+
 }
 
 .d_liked {

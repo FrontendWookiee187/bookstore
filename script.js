@@ -16,7 +16,6 @@ function addComment() {
   for (let i = 0; i < books.length; i++) {
     let addCommentValueRef = document.getElementById(`inputField${i}`);
     let addCommentValue = addCommentValueRef.value;
-
     let addComment = { name: "Daniel", comment: addCommentValue };
 
     if (addCommentValue === "") {
@@ -25,10 +24,7 @@ function addComment() {
       document.getElementById(`comments${i}`).innerHTML = "";
 
       for (let j = 0; j < books[i].comments.length; j++) {
-        document.getElementById(`comments${i}`).innerHTML += renderComments(
-          i,
-          j
-        );
+        document.getElementById(`comments${i}`).innerHTML += renderComments(i,j);
         addCommentValueRef.value = "";
       }
     }
