@@ -46,9 +46,7 @@ function likeCounter(i) {
     document.getElementById(`likes${i}`).innerHTML = /*html*/ `
             ${books[i].likes + 1}           `;
 
-    console.log(likesRef.classList.contains("d_liked"));
-    console.log(books[i].likes);
-  } else if (likesRef.classList.contains("d_unliked") === true) {
+} else if (likesRef.classList.contains("d_unliked") === true) {
     document.getElementById(`likes${i}`).innerHTML = /*html*/ `
             ${books[i].likes}
              `;
